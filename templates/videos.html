@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+<title>Videos</title>
+{% endblock %}
+
+{% block videos %}
+<div class="container p-2 my-2">
+    {% for video in video%}
+    <iframe height="350vh" width="60%" src="{{video.link}}" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+    <h1 class="p-1">{{video.heading}}</h1>
+    {% endfor %}
+</div>
+<h1 class="container text-danger">Others Videos</h1>
+<div class="container mt-4">
+    <div class="row">
+        {% for video in videos %}
+        <div class="col-md-4 border border-success p-2 mb-2">
+            <iframe height="200vh" width="100%" src="{{video.link}}" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen></iframe>
+            <h4>{{video.heading}}</h4>
+        </div>
+        {% endfor %}
+        <div class="col-md-4 border border-success p-2 mb-2">b
+        </div>
+        <div class="col-md-4 border border-success p-2 mb-2">c
+        </div>
+    </div>
+</div>
+{% endblock %}
